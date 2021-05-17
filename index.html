@@ -18,15 +18,14 @@
       <a-assets>
         <video id="my-video" loop="true" src="assets/video/LogoPrem.webm" autoplay="true"></video>
       </a-assets>
-     
-      <a-video
-          src="#my-video"
-          width="5"
-          height="3"
-          position="0 0 -20"
-          autoplay = true
-          material="shader: transparent-video"
-        ></a-video>
+      <a-entity
+        material="shader: transparent-video; src: #my-video"
+        geometry="primitive: plane;
+                  width: 5;
+                  height: 4"
+        position="0 1 -20">
+      </a-entity>
+      
       <a-entity camera look-controls="reverseMouseDrag:true" cursor="rayOrigin: mouse"></a-entity>
         
         
