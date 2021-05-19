@@ -13,6 +13,7 @@
     <script src="./play-on-click.js"></script>
     <script src="./hide-on-play.js"></script>
     <script src="./pinch-scale-component.js"></script>
+    <script src="./scroll-scale.js"></script>
   </head>
   <body style="margin: 0px; overflow: hidden">
     <a-scene arjs="debugUIEnabled: false;">
@@ -26,7 +27,6 @@
           crossorigin="anonymous"
           playsinline=""
           webkit-playsinline=""
-          scale="1 1 1"
         ></video>
       </a-assets>
 
@@ -38,8 +38,8 @@
         position="0 1 -45"
         class="cantap"
         play-on-click
+        scroll-scale
         visible="false"
-        pinch-scale
       >
       </a-entity>
 

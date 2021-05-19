@@ -10,11 +10,12 @@ AFRAME.registerComponent("pinch-scale", {
       (s && { x: s, y: s, z: s }) || this.el.object3D.scale.clone();
     this.scaleFactor = 1;
     this.handleEvent = this.handleEvent.bind(this);
-    this.el.sceneEl.addEventListener("scroll", this.handleEvent);
+    window.addEventListener("scroll", this.handleEvent);
+    console.log("something");
     this.el.classList.add("cantap"); // Needs "objects: .cantap" attribute on raycaster.
   },
   remove() {
-    this.el.sceneEl.removeEventListener("scroll", this.handleEvent);
+    window.removeEventListener("scroll", this.handleEvent);
   },
   handleEvent(event) {
     this.scaleFactor *=
@@ -23,7 +24,7 @@ AFRAME.registerComponent("pinch-scale", {
       Math.max(this.scaleFactor, this.data.min),
       this.data.max
     );
-
+    console.log("scrolling");
     this.el.object3D.scale.x = this.scaleFactor * this.initialScale.x;
     this.el.object3D.scale.y = this.scaleFactor * this.initialScale.y;
     this.el.object3D.scale.z = this.scaleFactor * this.initialScale.z;
