@@ -1,7 +1,7 @@
-AFRAME.registerComponent("scroll-scale", {
+AFRAME.registerComponent("touch-scale", {
   init: function () {
-    window.addEventListener(
-      "wheel",
+    this.el.addEventListener(
+      "touchmove",
       (e) => {
         console.log("hey");
         let scaleFactor = e.deltaY > 0 ? 0.9 : 1.1;
