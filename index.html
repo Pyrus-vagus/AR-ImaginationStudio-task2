@@ -18,28 +18,11 @@
     <script src="./gesture-detector-component.js"></script>
   </head>
   <body style="margin: 0px; overflow: hidden">
-    <a-scene arjs="debugUIEnabled: false;" cursor="rayOrigin: mouse" >
+    <a-scene  gesture-detector-component >
       <a-assets>
         <video id="my-video" src="assets/video/LogoPrem.webm" width="160" height="90" loop="true" crossorigin="anonymous" playsinline="" webkit-playsinline="" autoplay="true"></video>
       </a-assets>
-     
-      <a-entity
-       gesture-detector-component
-        pinch-scale-component
-        hold-drag-component
-        class="cantap"
-        material="shader: transparent-video; src: #my-video"
-        geometry="primitive: plane;
-                  width: 15%;
-                  height: 10%"
-        position="0 1 -45"
-        scale = "1"
-        visible = 'false'
-        play-on-click
-        >
-              </a-entity>
-      
-      <a-camera id="camera" look-controls="reverseMouseDrag:true" wasd-controls cursor="rayOrigin: mouse" raycaster="objects: .cantap">
+      <a-camera id="camera" cursor="fuse: false; rayOrigin: mouse;" raycaster="objects: .cantap">
         <a-entity position="0 0 -1.5" text="align: center;
                 width: 6;
                 wrapCount: 100;
@@ -47,6 +30,33 @@
                 value: Click or tap to start video" hide-on-play="#my-video">
        </a-entity>
       </a-camera>
+      
+     
+      <a-entity
+        
+        material="shader: transparent-video; src: #my-video"
+        geometry="primitive: plane;
+                  width: 15%;
+                  height: 10%"
+        position="0 1 -45"
+        class="cantap"
+        pinch-scale-component
+        hold-drag-component
+        scale = "1 1 1"
+        visible = 'false'
+        play-on-click
+        >
+              </a-entity>
+              <a-plane
+              id="ground" 
+              rotation="-90 0 0" 
+              width="1000" 
+              height="1000" 
+              material="shader: shadow" 
+              shadow>
+            </a-plane>
+      
+      
         
         
         
