@@ -1,4 +1,4 @@
-AFRAME.registerComponent("pinch-scale-component", {
+AFRAME.registerComponent("pinch-scale", {
   schema: {
     min: { default: 0.33 },
     max: { default: 3 },

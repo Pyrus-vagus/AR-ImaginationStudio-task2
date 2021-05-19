@@ -12,9 +12,10 @@
     <script src="./shader-component.js"></script>
     <script src="./play-on-click.js"></script>
     <script src="./hide-on-play.js"></script>
+    <script src="./pinch-scale-component.js"></script>
   </head>
   <body style="margin: 0px; overflow: hidden">
-    <a-scene arjs="debugUIEnabled: false;" cursor="rayOrigin: mouse">
+    <a-scene arjs="debugUIEnabled: false;">
       <a-assets>
         <video
           id="my-video"
@@ -35,8 +36,10 @@
                   width: 15%;
                   height: 10%"
         position="0 1 -45"
+        class="cantap"
         play-on-click
         visible="false"
+        pinch-scale
       >
       </a-entity>
 
@@ -45,6 +48,7 @@
         look-controls="reverseMouseDrag:true"
         wasd-controls
         cursor="rayOrigin: mouse"
+        raycaster="objects: .cantap"
       >
         <a-entity
           position="0 0 -1.5"
