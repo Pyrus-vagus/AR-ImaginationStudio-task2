@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./styles.css" />
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-    <!-- <script src="https://unpkg.com/aframe-event-set-component@^4.0.0/dist/aframe-event-set-component.min.js"></script> -->
+    <script src="https://unpkg.com/aframe-event-set-component@^4.0.0/dist/aframe-event-set-component.min.js"></script>
     <script src="./shader-component.js"></script>
     <script src="./play-on-click.js"></script>
     <script src="./hide-on-play.js"></script>
@@ -19,7 +19,7 @@
   <body style="margin: 0px; overflow: hidden">
     <a-scene arjs="debugUIEnabled: false;" cursor="rayOrigin: mouse" >
       <a-assets>
-        <video id="my-video" src="assets/video/LogoPrem.webm" width="160" height="90" loop="true" crossorigin="anonymous" playsinline="" webkit-playsinline=""></video>
+        <video id="my-video" src="assets/video/LogoPrem.webm" width="160" height="90" loop="true" crossorigin="anonymous" playsinline="" webkit-playsinline="" autoplay="true"></video>
       </a-assets>
      
       <a-entity
@@ -31,16 +31,15 @@
                   width: 15%;
                   height: 10%"
         position="0 1 -45"
-        play-on-click
-        visible = 'false'>
+        >
               </a-entity>
       
       <a-camera id="camera" look-controls="reverseMouseDrag:true" wasd-controls cursor="rayOrigin: mouse" raycaster="objects: .cantap">
-        <a-entity position="0 0 -1.5" text="align: center;
+        <!-- <a-entity position="0 0 -1.5" text="align: center;
                 width: 6;
                 wrapCount: 100;
                 color: black;
-                value: Click or tap to start video" hide-on-play="#my-video">
+                value: Click or tap to start video" hide-on-play="#my-video"> -->
        </a-entity>
       </a-camera>
         
