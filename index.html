@@ -15,6 +15,7 @@
     <script src="./hide-on-play.js"></script>
     <script src="./pinch-scale-component.js"></script>
     <script src="./hold-drag-component.js"></script>
+    <script src="./gesture-detector-component.js"></script>
   </head>
   <body style="margin: 0px; overflow: hidden">
     <a-scene arjs="debugUIEnabled: false;" cursor="rayOrigin: mouse" >
@@ -23,6 +24,7 @@
       </a-assets>
      
       <a-entity
+       gesture-detector-component
         pinch-scale-component
         hold-drag-component
         class="cantap"
@@ -31,15 +33,18 @@
                   width: 15%;
                   height: 10%"
         position="0 1 -45"
+        scale = "1"
+        visible = 'false'
+        play-on-click
         >
               </a-entity>
       
       <a-camera id="camera" look-controls="reverseMouseDrag:true" wasd-controls cursor="rayOrigin: mouse" raycaster="objects: .cantap">
-        <!-- <a-entity position="0 0 -1.5" text="align: center;
+        <a-entity position="0 0 -1.5" text="align: center;
                 width: 6;
                 wrapCount: 100;
                 color: black;
-                value: Click or tap to start video" hide-on-play="#my-video"> -->
+                value: Click or tap to start video" hide-on-play="#my-video">
        </a-entity>
       </a-camera>
         
